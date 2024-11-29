@@ -1,0 +1,105 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+body {
+  font-family: 'Josefin Sans', sans-serif; /* or any other font you want to set as default */
+  background-color: #f9f6f4; /* Set your background color if needed */
+}
+
+@keyframes waveEffect {
+  0% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 35px; 
+    height: 35px; 
+  }
+
+  .sign-out-text {
+    display: none;
+  }
+}
+
+.news-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-card:hover {
+  transform: translateY(-5px);
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.error-message {
+  animation: shake 0.5s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-10px);
+  }
+  75% {
+      transform: translateX(10px);
+  }
+}
+.wave-effect {
+  color: black; /* Default text color */
+  position: relative;
+  display: inline-block;
+}
+
+.wave-effect:hover {
+  color: transparent; /* Makes the text color transparent */
+  background: linear-gradient(90deg, #000000 0%, #ffa02d 50%, #000000 100%);
+  background-size: 200% auto;
+  animation: waveEffect 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(13, 148, 136, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(13, 148, 136, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(13, 148, 136, 0.5); }
+}
+
+.level-up {
+  animation: glow 2s infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
